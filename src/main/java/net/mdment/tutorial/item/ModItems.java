@@ -3,6 +3,8 @@ package net.mdment.tutorial.item;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.mdment.tutorial.TutorialMod;
+
 
 public class ModItems {
 	
@@ -19,6 +21,10 @@ public class ModItems {
 	private static <T extends Item> T register(T item) {
 		GameRegistry.register(item);
 
+		if (item instanceof ItemModelProvider) {
+			((ItemModelProvider)item).registerItemModel(item);
+		}
+		
 		if (item instanceof ItemBase) {
 			((ItemBase)item).registerItemModel(item);
 		}
