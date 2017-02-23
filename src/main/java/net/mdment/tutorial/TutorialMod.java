@@ -26,7 +26,6 @@ public class TutorialMod {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		System.out.println(name + " is loading!");
 		ModBlocks.init();
 		ModItems.init();
 		
