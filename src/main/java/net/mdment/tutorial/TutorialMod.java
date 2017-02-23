@@ -4,6 +4,7 @@ import net.mdment.tutorial.block.ModBlocks;
 import net.mdment.tutorial.client.TutorialTab;
 import net.mdment.tutorial.item.ModItems;
 import net.mdment.tutorial.proxy.CommonProxy;
+import net.mdment.tutorial.recipe.ModRecipes;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -33,7 +34,7 @@ public class TutorialMod {
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
-		
+		ModRecipes.init();		
 	}
 
 	@Mod.EventHandler

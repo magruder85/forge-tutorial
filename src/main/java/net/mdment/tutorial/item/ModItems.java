@@ -25,9 +25,7 @@ public class ModItems {
 			((ItemModelProvider)item).registerItemModel(item);
 		}
 		
-		if (item instanceof ItemBase) {
-			((ItemBase)item).registerItemModel(item);
-		}
+
 
 		return item;
 	}
