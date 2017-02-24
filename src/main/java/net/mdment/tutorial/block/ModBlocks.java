@@ -1,5 +1,6 @@
 package net.mdment.tutorial.block;
 
+import net.mdment.tutorial.block.pedestal.BlockPedestal;
 import net.mdment.tutorial.item.ItemModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -7,15 +8,18 @@ import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.mdment.tutorial.item.ItemModelProvider;
 import net.mdment.tutorial.item.ItemOreDict;
+import net.mdment.tutorial.block.pedestal.BlockPedestal;
 
 public class ModBlocks {
 
 	public static BlockOre oreCopper;
 	public static BlockCropCorn cropCorn;
+	public static BlockPedestal pedestal;
 
 	public static void init() {
 		oreCopper = register(new BlockOre("oreCopper", "oreCopper"));
 		cropCorn = register(new BlockCropCorn(), null);
+		pedestal = register(new BlockPedestal());
 	}
 	
 
