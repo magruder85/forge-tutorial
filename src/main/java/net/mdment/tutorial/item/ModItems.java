@@ -13,9 +13,9 @@ public class ModItems {
 	public static ItemBase corn;
 
 	public static void init() {
-		ingotCopper = register(new ItemBase("ingotCopper"));
+		ingotCopper = register(new ItemOre("ingotCopper", "ingotCopper"));
 		cornSeed = register(new ItemCornSeed());
-		corn = register(new ItemBase("corn"));
+		corn = register(new ItemOre("corn", "cropCorn"));
 	}
 
 	private static <T extends Item> T register(T item) {
@@ -23,6 +23,10 @@ public class ModItems {
 
 		if (item instanceof ItemModelProvider) {
 			((ItemModelProvider)item).registerItemModel(item);
+		}
+		
+		if (item instanceof ItemOreDict) {
+			((ItemOreDict)item).initOreDict();
 		}
 		
 

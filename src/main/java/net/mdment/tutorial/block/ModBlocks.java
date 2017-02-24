@@ -5,6 +5,8 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.mdment.tutorial.item.ItemModelProvider;
+import net.mdment.tutorial.item.ItemOreDict;
 
 public class ModBlocks {
 
@@ -12,7 +14,7 @@ public class ModBlocks {
 	public static BlockCropCorn cropCorn;
 
 	public static void init() {
-		oreCopper = register(new BlockOre("oreCopper"));
+		oreCopper = register(new BlockOre("oreCopper", "oreCopper"));
 		cropCorn = register(new BlockCropCorn(), null);
 	}
 	
@@ -26,7 +28,14 @@ public class ModBlocks {
 		if (block instanceof ItemModelProvider) {
 			((BlockBase)block).registerItemModel(itemBlock);
 		}
+		if (block instanceof ItemOreDict) {
+			((ItemOreDict)block).initOreDict();
 		}
+		if (itemBlock instanceof ItemOreDict) {
+			((ItemOreDict)itemBlock).initOreDict();
+		}
+		}
+	
 		return block;
 	}
 
