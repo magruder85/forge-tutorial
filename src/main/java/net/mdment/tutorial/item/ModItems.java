@@ -10,12 +10,12 @@ public class ModItems {
 	
 	public static ItemBase ingotCopper;
 	public static ItemCornSeed cornSeed;
-	public static ItemBase corn;
+	public static ItemCorn corn;
 
 	public static void init() {
 		ingotCopper = register(new ItemOre("ingotCopper", "ingotCopper"));
 		cornSeed = register(new ItemCornSeed());
-		corn = register(new ItemOre("corn", "cropCorn"));
+		corn = register(new ItemCorn());
 	}
 
 	private static <T extends Item> T register(T item) {
